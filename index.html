@@ -42,7 +42,7 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -125,47 +125,57 @@
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 50px;
+            align-items: stretch;
         }
 
         .testimonial-item {
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            background: var(--sand-bg);
+            background: #ffffff;
             border: 1px solid var(--sand-dark);
             display: flex;
             flex-direction: column;
-            height: 100%; /* מבטיח שכל הכרטיסים באותו גובה */
+            height: 100%;
+            transition: transform 0.3s ease;
         }
 
-        /* מכל לתמונה - פותר את בעיית הגבהים השונים */
+        .testimonial-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* מכל חכם לתמונה שפותר את בעיית הגדלים */
         .testimonial-img-wrapper {
-            height: 500px; /* גובה קבוע לכל העדויות */
-            background-color: #fcfcfc;
+            height: 450px;
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: #fafafa;
+            padding: 15px;
             overflow: hidden;
-            padding: 10px;
         }
 
         .testimonial-item img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* שומר על הפרופורציות בלי למתוך או לחתוך */
-            border-radius: 10px;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
         .testimonial-caption {
-            padding: 25px 20px;
-            font-size: 18px;
+            padding: 20px;
+            font-size: 17px;
             font-weight: 700;
             color: var(--sage-green);
             background-color: var(--white);
             border-top: 1px solid var(--sand-dark);
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Deliverables */
@@ -292,7 +302,7 @@
             }
             .about-text { text-align: center; }
             .about-img-small { margin-bottom: 50px; }
-            .testimonial-img-wrapper { height: 400px; }
+            .testimonial-img-wrapper { height: 350px; }
         }
     </style>
 </head>
@@ -305,7 +315,7 @@
     <!-- Hero Section -->
     <section class="hero container">
         <div class="hero-image-box">
-            <img src="pnina-main.jpeg" alt="פנינה קריוף - זיקוק דיגיטלי">
+            <img src="pnina-main.jpeg" alt="פנינה קריוף - זיקוק דיגיטלי" onerror="this.src='https://via.placeholder.com/300?text=Pnina+Photo'">
         </div>
         <h1>לזקק את המהות שלך למנוע דיגיטלי שעובד</h1>
         <p>מביאים את הלב והניסיון המקצועי, ובונים יחד את התשתית הדיגיטלית. ב-4 שעות ממוקדות נהפוך את הקול הייחודי שלך למערכת בינה מלאכותית שחוסכת לך זמן ושומרת על האותנטיות שלך.</p>
