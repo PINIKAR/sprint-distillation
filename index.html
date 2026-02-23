@@ -126,10 +126,10 @@
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            gap: 25px;
             margin: 50px auto 0;
             align-items: start;
-            max-width: 850px; /* הקטנת הרוחב המקסימלי של כל האזור */
+            max-width: 700px; /* הקטנת הרוחב המקסימלי הכללי של אזור העדויות */
         }
 
         .testimonial-item {
@@ -143,11 +143,11 @@
             transition: transform 0.3s ease;
         }
 
-        /* העדות של שלי מקבלת שורה שלמה */
+        /* העדות של שלי מקבלת שורה שלמה ומצומצמת יותר */
         .testimonial-item.wide {
             grid-column: span 2;
-            max-width: 700px; /* הקטנת הרוחב הספציפי של העדות של שלי */
-            margin: 0 auto 10px;
+            max-width: 550px; /* הקטנת הרוחב של העדות של שלי למראה מעודן יותר */
+            margin: 0 auto 15px;
         }
 
         .testimonial-item:hover {
@@ -169,8 +169,8 @@
         }
 
         .testimonial-caption {
-            padding: 20px;
-            font-size: 17px;
+            padding: 15px 10px;
+            font-size: 16px;
             font-weight: 700;
             color: var(--sage-green);
             background-color: var(--sand-bg);
@@ -354,10 +354,11 @@
         @media (max-width: 768px) {
             .testimonial-grid {
                 grid-template-columns: 1fr;
-                max-width: 450px;
+                max-width: 400px;
             }
             .testimonial-item.wide {
                 grid-column: span 1;
+                max-width: 100%;
             }
             .about-content { 
                 padding: 60px 30px;
