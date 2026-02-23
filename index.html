@@ -125,8 +125,8 @@
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
             margin-top: 50px;
             align-items: start;
         }
@@ -140,6 +140,13 @@
             display: flex;
             flex-direction: column;
             transition: transform 0.3s ease;
+        }
+
+        /* העדות של שלי מקבלת שורה שלמה */
+        .testimonial-item.wide {
+            grid-column: span 2;
+            max-width: 850px;
+            margin: 0 auto 10px;
         }
 
         .testimonial-item:hover {
@@ -343,7 +350,13 @@
 
         footer { padding: 80px 0; border-top: 1px solid var(--sand-dark); }
 
-        @media (max-width: 992px) {
+        @media (max-width: 768px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-item.wide {
+                grid-column: span 1;
+            }
             .about-content { 
                 padding: 60px 30px;
                 text-align: center; 
@@ -377,10 +390,18 @@
     <section class="testimonials">
         <div class="container">
             <h2 class="section-title">מה אומרים מי שכבר עברו את הזיקוק?</h2>
-            <p style="font-size: 20px; color: var(--deep-text);">הוכחות מהשטח - כך זה נראה כשהלב פוגש את הבינה</p>
+            <p style="font-size: 20px; color: var(--deep-text); margin-bottom: 20px;">הוכחות מהשטח - כך זה נראה כשהלב פוגש את הבינה</p>
             
             <div class="testimonial-grid">
-                <!-- עדות 1: לינור -->
+                <!-- עדות 2: שלי - העדות הרחבה למעלה -->
+                <div class="testimonial-item wide">
+                    <div class="testimonial-img-wrapper">
+                        <img src="sheli.jpg" alt="עדות של שלי משה">
+                    </div>
+                    <div class="testimonial-caption">"לעשות סדר ולהפוך רעיונות לנכסים בשעה"</div>
+                </div>
+                
+                <!-- עדות 1: לינור - אחת ליד השנייה -->
                 <div class="testimonial-item">
                     <div class="testimonial-img-wrapper">
                         <img src="linor.jpg" alt="עדות של לינור מוריאל אלפסי">
@@ -388,15 +409,7 @@
                     <div class="testimonial-caption">"עוזרת לעצמאיות לפשט טכנולוגיה"</div>
                 </div>
                 
-                <!-- עדות 2: שלי -->
-                <div class="testimonial-item">
-                    <div class="testimonial-img-wrapper">
-                        <img src="sheli.jpg" alt="עדות של שלי משה">
-                    </div>
-                    <div class="testimonial-caption">"לעשות סדר ולהפוך רעיונות לנכסים בשעה"</div>
-                </div>
-                
-                <!-- עדות 3: ג'ניה -->
+                <!-- עדות 3: ג'ניה - אחת ליד השנייה -->
                 <div class="testimonial-item">
                     <div class="testimonial-img-wrapper">
                         <img src="jenya.jpeg" alt="עדות של ג'ניה סלם">
