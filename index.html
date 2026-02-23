@@ -42,7 +42,7 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -245,17 +245,49 @@
             background: var(--white);
             max-width: 650px;
             margin: 100px auto;
-            padding: 70px 50px;
+            padding: 60px 50px;
             border-radius: 40px;
             box-shadow: 0 30px 60px rgba(0,0,0,0.08);
             border: 3px solid var(--sage-green);
+            text-align: right;
+        }
+
+        .price-box h2 {
+            text-align: center;
+            color: var(--sage-green);
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .price-items {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .price-items li {
+            font-size: 19px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .price-items li i {
+            color: var(--sage-green);
+            margin-left: 15px;
+            font-size: 20px;
+        }
+
+        .price-footer {
+            text-align: center;
+            border-top: 1px solid var(--sand-dark);
+            padding-top: 30px;
         }
 
         .new-price {
             font-size: 64px;
             font-weight: 800;
             color: var(--sage-green);
-            margin: 15px 0;
+            margin: 10px 0;
         }
 
         .whatsapp-fixed {
@@ -389,12 +421,19 @@
     <!-- Pricing -->
     <section class="pricing container">
         <div class="price-box">
-            <h2 style="color: var(--sage-green); font-size: 36px; margin-bottom: 20px;">ספרינט זיקוק דיגיטלי</h2>
-            <p style="font-size: 20px;">4 שעות ממוקדות של עבודה משותפת לבניית התשתית שלך.</p>
-            <p style="text-decoration: line-through; color: #999; margin-top: 30px; font-size: 26px;">2,800 ש"ח</p>
-            <p class="new-price">2,200 ש"ח</p>
-            <p style="font-weight: 700; color: var(--accent-gold); margin-bottom: 40px; font-size: 22px;">הטבת השקה מיוחדת</p>
-            <a href="https://wa.me/972548383451?text=היי פנינה, אני רוצה לשריין לי מקום לספרינט הזיקוק הדיגיטלי" class="btn" style="width: 100%;" target="_blank">אני רוצה לשריין לי מקום</a>
+            <h2>ההשקעה במנוע הדיגיטלי שלך</h2>
+            <ul class="price-items">
+                <li><i class="fas fa-check"></i> הקמת סוכנת התהודה האישית (Gem)</li>
+                <li><i class="fas fa-check"></i> הטמעת מזקקת הניהול והקליניקה</li>
+                <li><i class="fas fa-check"></i> ארגז הכלים המלא (PromptBook) + 5 דיוקים אישיים</li>
+                <li><i class="fas fa-check"></i> 4 שעות ממוקדות של "Done With You" עד להקמה מלאה</li>
+            </ul>
+            <div class="price-footer">
+                <p style="text-decoration: line-through; color: #999; font-size: 24px;">2,800 ש"ח</p>
+                <p class="new-price">2,200 ש"ח</p>
+                <p style="font-weight: 700; color: var(--accent-gold); margin-bottom: 30px; font-size: 20px;">הטבת השקה מיוחדת לזמן מוגבל</p>
+                <a href="https://wa.me/972548383451?text=היי פנינה, אני רוצה לשריין לי מקום לספרינט הזיקוק הדיגיטלי" class="btn" style="width: 100%;" target="_blank">אני רוצה לשריין לי מקום</a>
+            </div>
         </div>
     </section>
 
