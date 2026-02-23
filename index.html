@@ -196,6 +196,34 @@
             display: block;
         }
 
+        /* Suitability Section */
+        .suitability {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .suitability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+            text-align: right;
+        }
+
+        .suit-box {
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px dashed var(--sand-dark);
+        }
+
+        .suit-box h3 {
+            margin-bottom: 15px;
+            color: var(--sage-green);
+        }
+
+        .suit-box.no { border-color: #e57373; }
+        .suit-box.no h3 { color: #e57373; }
+
         /* About Section */
         .about {
             background-color: var(--sand-dark);
@@ -341,7 +369,7 @@
         </div>
         <h1>לזקק את המהות שלך למנוע דיגיטלי שעובד</h1>
         <p>מביאים את הלב והניסיון המקצועי, ובונים יחד את התשתית הדיגיטלית. ב-4 שעות ממוקדות נהפוך את הקול הייחודי שלך למערכת בינה מלאכותית שחוסכת לך זמן ושומרת על האותנטיות שלך.</p>
-        <a href="https://wa.me/972548383451?text=היי פנינה, אשמח לשמוע פרטים על ספרינט הזיקוק הדיגיטלי" class="btn" target="_blank">אני רוצה לזקק את העסק שלי</a>
+        <a href="https://wa.me/972548383451?text=היי פנינה, אשמח לבדוק התאמה לספרינט הזיקוק הדיגיטלי" class="btn" target="_blank">בואי נבדוק אם זה מתאים לך</a>
         <p class="motto">"אני לא מלמדת טכנולוגיה - אלא איך לא לפחד ממנה"</p>
     </section>
 
@@ -375,6 +403,25 @@
                     </div>
                     <div class="testimonial-caption">"לצאת עם ידיעה ברורה איך להתחיל לפעול"</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suitability Check -->
+    <section class="suitability container">
+        <h2 class="section-title">האם הספרינט הזה בשבילך?</h2>
+        <div class="suitability-grid">
+            <div class="suit-box">
+                <h3>זה בשבילך אם:</h3>
+                <p>- יש לך עסק מבוסס ידע או קליניקה שפועלת מהלב.</p>
+                <p>- נמאס לך לבזבז שעות על ניסוח פוסטים ומיילים.</p>
+                <p>- את רוצה שהטכנולוגיה תעבוד עבורך ולא להיפך.</p>
+            </div>
+            <div class="suit-box no">
+                <h3>זה לא בשבילך אם:</h3>
+                <p>- את מחפשת פתרונות "קסם" בלי להיות נוכחת בתהליך.</p>
+                <p>- את לא מוכנה להשקיע זמן ראשוני בבניית התשתית.</p>
+                <p>- את מעדיפה להמשיך לעבוד קשה ולעשות הכל ידנית.</p>
             </div>
         </div>
     </section>
@@ -426,13 +473,13 @@
                 <li><i class="fas fa-check"></i> הקמת סוכנת התהודה האישית (Gem)</li>
                 <li><i class="fas fa-check"></i> הטמעת מזקקת הניהול והקליניקה</li>
                 <li><i class="fas fa-check"></i> ארגז הכלים המלא (PromptBook) + 5 דיוקים אישיים</li>
-                <li><i class="fas fa-check"></i> 4 שעות ממוקדות של "Done With You" עד להקמה מלאה</li>
+                <li><i class="fas fa-check"></i> תהליך "Done With You" עד להקמה מלאה של התשתית</li>
             </ul>
             <div class="price-footer">
                 <p style="text-decoration: line-through; color: #999; font-size: 24px;">2,800 ש"ח</p>
                 <p class="new-price">2,200 ש"ח</p>
-                <p style="font-weight: 700; color: var(--accent-gold); margin-bottom: 30px; font-size: 20px;">הטבת השקה מיוחדת לזמן מוגבל</p>
-                <a href="https://wa.me/972548383451?text=היי פנינה, אני רוצה לשריין לי מקום לספרינט הזיקוק הדיגיטלי" class="btn" style="width: 100%;" target="_blank">אני רוצה לשריין לי מקום</a>
+                <p style="font-weight: 700; color: var(--accent-gold); margin-bottom: 30px; font-size: 20px;">עלות השקה חד פעמית עבור נכס שנשאר איתך לתמיד</p>
+                <a href="https://wa.me/972548383451?text=היי פנינה, אשמח לבדוק התאמה לספרינט הזיקוק הדיגיטלי" class="btn" style="width: 100%;" target="_blank">בואי נבדוק אם זה מתאים לך</a>
             </div>
         </div>
     </section>
