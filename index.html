@@ -19,502 +19,132 @@
             --accent-gold: #C5A059;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Assistant', sans-serif;
             background-color: var(--sand-bg);
             color: var(--deep-text);
             line-height: 1.7;
-            overflow-x: hidden;
             text-align: center;
         }
 
-        h1, h2, h3 {
-            font-family: 'Heebo', sans-serif;
-            font-weight: 800;
-        }
+        h1, h2, h3 { font-family: 'Heebo', sans-serif; font-weight: 800; }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
         /* Hero Section */
-        .hero {
-            padding: 120px 0 80px;
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(40px, 8vw, 64px);
-            color: var(--sage-green);
-            line-height: 1.1;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            font-size: clamp(18px, 4vw, 24px);
-            margin-bottom: 40px;
-            max-width: 800px;
-            color: var(--deep-text);
-        }
-
+        .hero { padding: 80px 0 60px; }
+        .hero h1 { font-size: clamp(35px, 7vw, 60px); color: var(--sage-green); line-height: 1.1; margin-bottom: 20px; }
+        .hero-mission { font-weight: 700; color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 30px; }
+        
         .hero-image-box {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 10px solid var(--white);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1), 15px 15px 0px var(--sage-green);
-            margin-bottom: 40px;
-            background-color: var(--sand-dark);
+            width: 250px; height: 250px; border-radius: 50%; overflow: hidden;
+            border: 8px solid var(--white); box-shadow: 0 15px 35px rgba(0,0,0,0.1), 12px 12px 0px var(--sage-green);
+            margin: 0 auto 30px; background-color: var(--sand-dark);
         }
-
-        .hero-image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .hero-image-box img { width: 100%; height: 100%; object-fit: cover; }
 
         .btn {
-            display: inline-block;
-            background-color: var(--sage-green);
-            color: var(--white);
-            padding: 22px 55px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 22px;
-            font-weight: 700;
-            transition: all 0.3s ease;
+            display: inline-block; background-color: var(--sage-green); color: var(--white);
+            padding: 20px 50px; border-radius: 50px; text-decoration: none;
+            font-size: 20px; font-weight: 700; transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(156, 161, 143, 0.3);
-            border: none;
-            cursor: pointer;
+            margin-bottom: 20px;
         }
+        .btn:hover { transform: translateY(-3px); background-color: var(--deep-text); }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            background-color: var(--deep-text);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-        }
-
-        .motto {
+        /* הוספת סגנון למשפט הבית */
+        .home-motto {
             font-style: italic;
-            margin-top: 30px;
             color: var(--sage-green);
             font-weight: 600;
-            font-size: 19px;
+            font-size: 20px;
+            margin-top: 10px;
         }
 
-        .automation-notice {
-            margin-top: 15px;
-            font-size: 15px;
-            color: var(--accent-gold);
-            font-weight: 700;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background-color: var(--white);
-            padding: 100px 0;
-        }
-
+        /* Testimonials Grid - OCD Fix */
+        .testimonials { background-color: var(--white); padding: 80px 0; }
         .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin: 50px auto 0;
-            align-items: start;
-            max-width: 700px;
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;
+            margin: 40px auto 0; max-width: 800px; text-align: right;
         }
-
         .testimonial-item {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            background: #ffffff;
-            border: 1px solid var(--sand-dark);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
+            background: var(--sand-bg); border-radius: 20px; overflow: hidden;
+            border: 1px solid var(--sand-dark); display: flex; flex-direction: column;
         }
+        .testimonial-item.wide { grid-column: span 2; }
+        .testimonial-img-wrapper img { width: 100%; height: auto; display: block; }
+        .testimonial-caption { padding: 15px; font-weight: 700; color: var(--sage-green); text-align: center; }
 
-        .testimonial-item.wide {
-            grid-column: span 2;
-            max-width: 550px;
-            margin: 0 auto 15px;
-        }
-
-        .testimonial-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .testimonial-img-wrapper {
-            width: 100%;
-            background-color: #ffffff;
-            padding: 0;
-            border-bottom: 1px solid var(--sand-dark);
-        }
-
-        .testimonial-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
-        }
-
-        .testimonial-caption {
-            padding: 15px 10px;
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--sage-green);
-            background-color: var(--sand-bg);
-            text-align: center;
-        }
-
-        /* Deliverables */
-        .deliverables {
-            padding: 100px 0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
-            text-align: right;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 45px;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
-            border-bottom: 6px solid var(--sage-green);
-        }
-
-        .card i {
-            font-size: 45px;
-            color: var(--sage-green);
-            margin-bottom: 25px;
-            display: block;
-        }
-
-        /* Suitability Section */
-        .suitability {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .suitability-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-            text-align: right;
-        }
-
-        .suit-box {
-            padding: 30px;
-            border-radius: 20px;
-            border: 2px dashed var(--sand-dark);
-        }
-
-        .suit-box h3 {
-            margin-bottom: 15px;
-            color: var(--sage-green);
-        }
-
-        .suit-box.no { border-color: #e57373; }
-        .suit-box.no h3 { color: #e57373; }
-
-        /* About Section */
-        .about {
-            background-color: var(--sand-dark);
-            padding: 120px 0;
-            text-align: right;
-        }
-
-        .about-content {
-            background: var(--sand-bg);
-            padding: 80px 60px;
-            border-radius: 40px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .about-text { 
-            flex: 1; 
-            min-width: 320px; 
-        }
-
-        .about-text p {
-            margin-bottom: 25px;
-            font-size: 20px;
-            line-height: 1.8;
-        }
-
-        .about-img-small {
-            width: 260px;
-            height: 260px;
-            border-radius: 50%;
-            border: 10px solid var(--white);
-            overflow: hidden;
-            flex-shrink: 0;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1), 15px 15px 0px var(--sage-green);
-            background-color: var(--sand-dark);
-        }
-
-        .about-img-small img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* Pricing */
-        .pricing { padding: 40px 0; }
-        .price-box {
-            background: var(--white);
-            max-width: 650px;
-            margin: 60px auto;
-            padding: 60px 50px;
-            border-radius: 40px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
-            border: 3px solid var(--sage-green);
-            text-align: right;
-        }
-
-        .price-box h2 {
-            text-align: center;
-            color: var(--sage-green);
-            font-size: 36px;
-            margin-bottom: 30px;
-        }
-
-        .price-items {
-            list-style: none;
-            margin-bottom: 40px;
-        }
-
-        .price-items li {
-            font-size: 19px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
-
-        .price-items li i {
-            color: var(--sage-green);
-            margin-left: 15px;
-            font-size: 20px;
-        }
-
-        .price-footer {
-            text-align: center;
-            border-top: 1px solid var(--sand-dark);
-            padding-top: 30px;
-        }
-
-        .new-price {
-            font-size: 64px;
-            font-weight: 800;
-            color: var(--sage-green);
-            margin: 10px 0;
-        }
+        /* Deliverables Card Style */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .card { background: var(--white); padding: 40px; border-radius: 25px; border-bottom: 6px solid var(--sage-green); text-align: right; }
+        .card i { font-size: 40px; color: var(--sage-green); margin-bottom: 20px; display: block; }
 
         .whatsapp-fixed {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 38px;
-            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-            z-index: 1000;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            position: fixed; bottom: 30px; left: 30px; background-color: #25D366;
+            color: white; width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000;
         }
 
-        .whatsapp-fixed:hover {
-            transform: scale(1.1);
-        }
-
-        footer { padding: 80px 0; border-top: 1px solid var(--sand-dark); }
-
-        @media (max-width: 768px) {
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-            }
-            .testimonial-item.wide {
-                grid-column: span 1;
-                max-width: 100%;
-            }
-            .about-content { 
-                padding: 60px 30px;
-                text-align: center; 
-                justify-content: center;
-                flex-direction: column; 
-                align-items: center;
-            }
-            .about-text { text-align: center; }
-            .about-img-small { margin-bottom: 50px; }
-        }
+        footer { padding: 60px 0; background: var(--sand-bg); border-top: 1px solid var(--sand-dark); }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/972548383451?text=היי פנינה, רציתי לשאול משהו לגבי ספרינט הזיקוק" class="whatsapp-fixed" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/972548383451" class="whatsapp-fixed" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <section class="hero container">
-        <div class="hero-image-box">
-            <img src="pnina-main.jpeg" alt="פנינה קריוף - זיקוק דיגיטלי">
-        </div>
-        <h1>לזקק את המהות שלך למנוע דיגיטלי שעובד</h1>
-        <p>מביאים את הלב והניסיון המקצועי, ובונים יחד את התשתית הדיגיטלית. ב-4 שעות ממוקדות נהפוך את הקול הייחודי שלך למערכת בינה מלאכותית שחוסכת לך זמן ושומרת על האותנטיות שלך.</p>
+        <div class="hero-image-box"><img src="pnina-main.jpeg" alt="פנינה קריוף"></div>
+        <p class="hero-mission">"לב לבינה" (פנינה קריוף) - מרכז להטמעת בינה מלאכותית בעולם הטיפול, האימון והעסקים הרכים.</p>
+        <h1>לזקק את המהות שלכם למנוע דיגיטלי שעובד</h1>
+        <p style="margin-bottom: 40px; font-size: 1.2rem;">ב-4 שעות ממוקדות נהפוך את הקול הייחודי שלכם למערכת בינה מלאכותית שחוסכת לכם זמן ושומרת על האותנטיות שלכם.</p>
         
-        <a href="https://digital-sprint.fillout.com/t/baib893n2aus" class="btn">בואי נבצע אבחון התאמה (כ-3 דקות)</a>
-        <p class="automation-notice">⚡ אבחון אוטומטי יישלח אלייך מיד לאחר מילוי הטופס</p>
+        <a href="https://digital-sprint.fillout.com/t/baib893n2aus" class="btn">בואו נבצע אבחון התאמה מהיר ⚡</a>
         
-        <p class="motto">"אני לא מלמדת טכנולוגיה - אלא איך לא לפחד ממנה"</p>
+        <p class="home-motto">"אני לא מלמדת טכנולוגיה - אני מלמדת איך להרגיש איתה בבית"</p>
     </section>
 
     <section class="testimonials">
-    <div class="container">
-        <h2 class="section-title">מה אומרים מי שכבר עברו את הזיקוק?</h2>
-        <p style="font-size: 20px; color: var(--deep-text); margin-bottom: 20px;">הוכחות מהשטח - כך זה נראה כשהלב פוגש את הבינה</p>
-        
-        <div class="testimonial-grid">
-            
-            <div class="testimonial-item wide">
-                <div class="testimonial-img-wrapper">
-                    <img src="sheli.jpg" alt="עדות של שלי משה">
-                </div>
-                <div class="testimonial-caption">"לעשות סדר ולהפוך רעיונות לנכסים בשעה"</div>
-            </div>
-
-            <div class="testimonial-item">
-                <div class="testimonial-img-wrapper">
-                    <img src="anat.jpg" alt="עדות של ענת מורדכי">
-                </div>
-                <div class="testimonial-caption">"ה-AI סוף סוף עובד בשבילי"</div>
-                <div style="padding: 0 15px 15px; font-size: 14px; color: var(--deep-text); text-align: right; line-height: 1.4;">
-                    "מאז הספרינט משהו התיישב. יש לי סדר. אני כבר לא מתחילה כל פעם מאפס."
-                </div>
-            </div>
-            
-            <div class="testimonial-item">
-                <div class="testimonial-img-wrapper">
-                    <img src="jenya.jpeg" alt="עדות של ג'ניה סלם">
-                </div>
-                <div class="testimonial-caption">"לצאת עם ידיעה ברורה איך לפעול"</div>
-            </div>
-            
-        </div>
-    </div>
-</section>
-
-    <section class="suitability container">
-        <h2 class="section-title">האם הספרינט הזה בשבילך?</h2>
-        <div class="suitability-grid">
-            <div class="suit-box">
-                <h3>זה בשבילך אם:</h3>
-                <p>- יש לך עסק מבוסס ידע או קליניקה שפועלת מהלב.</p>
-                <p>- נמאס לך לבזבז שעות על ניסוח פוסטים ומיילים.</p>
-                <p>- את רוצה שהטכנולוגיה תעבוד עבורך ולא להיפך.</p>
-            </div>
-            <div class="suit-box no">
-                <h3>זה לא בשבילך אם:</h3>
-                <p>- את מחפשת פתרונות "קסם" בלי להיות נוכחת בתהליך.</p>
-                <p>- את לא מוכנה להשקיע זמן ראשוני בבניית התשתית.</p>
-                <p>- את מעדיפה להמשיך לעבוד קשה ולעשות הכל ידנית.</p>
-            </div>
-        </div>
-        
-        <div style="margin-top: 50px;">
-            <a href="https://digital-sprint.fillout.com/t/baib893n2aus" style="color: var(--sage-green); font-weight: 700; text-decoration: underline; font-size: 19px;">עדיין לא בטוחה? בואי נבצע בדיקת התאמה קצרה</a>
-        </div>
-    </section>
-
-    <section class="deliverables container">
-        <div class="grid">
-            <div class="card">
-                <i class="fa-solid fa-gem"></i>
-                <h3>סוכנת התהודה האישית (Gem)</h3>
-                <p>סוכנת AI שאומנה על ה-DNA המקצועי שלך. היא תכתוב פוסטים, מאמרים ומסרים שנשמעים בדיוק כמוך ומכבדים את הקשר עם הקהל.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-vial"></i>
-                <h3>מזקקת הקליניקה והניהול</h3>
-                <p>סוכנת חכמה שעוזרת לעבד סיכומי פגישות (תוך שמירה על פרטיות), לבנות תוכניות עבודה ולסדר את המחשבות בשניות.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-book-open"></i>
-                <h3>ארגז הכלים (PromptBook)</h3>
-                <p>גישה מלאה ל-101 הפרומפטים שלי + דיוק של 5 פרומפטים קריטיים שמותאמים ספציפית לצרכי העסק והקליניקה שלך.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="about">
-        <div class="container" style="max-width: 1200px;">
-            <div class="about-content">
-                <div class="about-img-small">
-                    <img src="pnina-main.jpeg" alt="פנינה קריוף">
-                </div>
-                <div class="about-text">
-                    <h2 class="section-title">נעים מאוד, פנינה קריוף</h2>
-                    <p style="font-weight: bold; color: var(--sage-green); font-size: 26px; margin-bottom: 30px;">מחברת בין עומק לחדשנות, בין אינטואיציה לרובוטים.</p>
-                    <p>בעשור האחרון ליוויתי עשרות אנשים במסעות של ריפוי, צמיחה והתמרה - דרך NLP, טארוט, נומרולוגיה, העיצוב האנושי ועוד.</p>
-                    <p>היום אני פונה אליכם - המטפלות והמטפלים, היוצרות והיוצרים, כל מי שפועל מהלב ורוצה להשפיע. אני מכירה את הדילמות, את הרגישות ואת הנטייה לדחות את הטכני לטובת האנושי.</p>
-                    <p>אני מגיעה מהעולם שלכם. אני כאן כדי להראות לכם שהבינה המלאכותית היא לא כלי מרוחק וטכני, אלא שותפה שמזקקת את הקול הייחודי שלכם ומפנה לכם מקום להיות נוכחים באמת במפגש האנושי.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing container">
-        <div class="price-box">
-            <h2>ההשקעה במנוע הדיגיטלי שלך</h2>
-            <ul class="price-items">
-                <li><i class="fas fa-check"></i> הקמת סוכנת התהודה האישית (Gem)</li>
-                <li><i class="fas fa-check"></i> הטמעת מזקקת הניהול והקליניקה</li>
-                <li><i class="fas fa-check"></i> ארגז הכלים המלא (PromptBook) + 5 דיוקים אישיים</li>
-                <li><i class="fas fa-check"></i> תהליך "Done With You" עד להקמה מלאה של התשתית</li>
-            </ul>
-            <div class="price-footer">
-                <p style="text-decoration: line-through; color: #999; font-size: 24px;">2,800 ש"ח</p>
-                <p class="new-price">2,200 ש"ח</p>
-                <p style="font-weight: 700; color: var(--accent-gold); margin-bottom: 30px; font-size: 20px;">עלות השקה חד פעמית עבור נכס שנשאר איתך לתמיד</p>
+        <div class="container">
+            <h2>מה אומרים מי שכבר עברו את הזיקוק?</h2>
+            <div class="testimonial-grid">
                 
-                <a href="https://digital-sprint.fillout.com/t/baib893n2aus" class="btn" style="width: 100%;">לבדיקת התאמה ואבחון מיידי</a>
-                <p style="margin-top: 15px; font-size: 14px; color: #666;">לאחר מילוי השאלון הקצר, האוטומציה שלי תנתח את הצרכים שלך ותשלח לך תשובה תוך שניות</p>
+                <div class="testimonial-item wide">
+                    <div class="testimonial-img-wrapper"><img src="sheli.jpg" alt="עדות שלי משה"></div>
+                    <div class="testimonial-caption">"לעשות סדר ולהפוך רעיונות לנכסים בשעה"</div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-img-wrapper"><img src="anat.jpg" alt="עדות ענת מורדכי"></div>
+                    <div class="testimonial-caption">"ה-AI סוף סוף עובד בשבילי"</div>
+                    <p style="padding: 0 15px 15px; font-size: 14px; opacity: 0.8;">"מאז הספרינט משהו התיישב. יש לי סדר. אני כבר לא מתחילה כל פעם מאפס."</p>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-img-wrapper"><img src="jenya.jpeg" alt="עדות ג'ניה סלם"></div>
+                    <div class="testimonial-caption">"לצאת עם ידיעה ברורה איך לפעול"</div>
+                </div>
+                
             </div>
+        </div>
+    </section>
+
+    <section class="container" style="padding: 80px 0;">
+        <h2>מה תקבלו בסיום ה-4 שעות?</h2>
+        <div class="grid-3">
+            <div class="card"><i class="fa-solid fa-gem"></i><h3>סוכנת תהודה אישית</h3><p>סוכנת AI שאומנה על ה-DNA המקצועי שלכם. היא תכתוב פוסטים ומסרים שנשמעים בדיוק כמוכם.</p></div>
+            <div class="card"><i class="fa-solid fa-vial"></i><h3>מזקקת ניהול</h3><p>סוכנת חכמה לעיבוד סיכומים, בניית תוכניות עבודה וסדר במחשבות תוך שניות.</p></div>
+            <div class="card"><i class="fa-solid fa-book-open"></i><h3>ארגז הכלים מלא</h3><p>גישה ל-101 הפרומפטים שלי + דיוק אישי של 5 פרומפטים קריטיים לעסק שלכם.</p></div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p style="font-weight: 700; font-size: 26px; color: var(--sage-green); margin-bottom: 10px;">פנינה קריוף - לב-לבינה</p>
-            <p style="font-size: 22px; margin-bottom: 15px;">מזקקת את המהות, מחברת את הלב | 054-8383451</p>
-            <div style="font-size: 15px; color: #888;">כל הזכויות שמורות &copy; 2026</div>
+            <p style="font-weight: 700; font-size: 22px; color: var(--sage-green);">פנינה קריוף - לב-לבינה</p>
+            <p>מרכז להטמעת בינה מלאכותית בעולם הטיפול, האימון והעסקים הרכים.</p>
+            <p style="margin-top: 20px; font-size: 14px; opacity: 0.6;">&copy; 2026 כל הזכויות שמורות</p>
         </div>
     </footer>
 
