@@ -34,7 +34,7 @@
         .h-black { font-family: 'Heebo', sans-serif; font-weight: 900; line-height: 1.1; }
         
         .btn-premium {
-            background: linear-gradient(135deg, #C5A059 0%, #E2C792 100%);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
             color: #000;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 10px 30px rgba(197, 160, 89, 0.3);
@@ -49,11 +49,21 @@
         }
         .card-premium:hover { border-color: #C5A059; transform: translateY(-8px); }
 
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        /* עיצוב עדויות וואטסאפ משודרג */
+        .testimonial-screenshot {
+            background: #1A1A1A;
+            border: 1px solid rgba(197, 160, 89, 0.2);
             border-radius: 2rem;
             overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .screenshot-img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            background: #fff; /* כדי שהוואטסאפ הלבן ייראה טוב */
+            border-bottom: 2px solid var(--gold);
         }
 
         .text-gradient {
@@ -65,27 +75,16 @@
 </head>
 <body class="antialiased text-right">
 
-    <header style="position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(197, 160, 89, 0.1);">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; flex-direction: row-reverse;">
-            <a href="index.html" style="background: white; padding: 5px 12px; border-radius: 10px; display: block;">
-                <img src="logo.png" alt="לב לבינה" style="height: 35px; width: auto; display: block;">
-            </a>
-            <a href="index.html" style="color: #C5A059; text-decoration: none; font-weight: 700; font-size: 14px; border: 1px solid #C5A059; padding: 8px 20px; border-radius: 50px; transition: all 0.3s; display: flex; align-items: center;">
-                <i class="fas fa-arrow-right" style="margin-left: 8px;"></i> חזרה לאתר
-            </a>
-        </div>
-    </header>
-
     <a href="https://wa.me/972548383451" class="fixed bottom-8 left-8 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-[9999] hover:scale-110 transition-transform" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-    <section class="pt-48 pb-24 px-6 text-center relative overflow-hidden">
+    <section class="pt-24 pb-24 px-6 text-center relative overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-gold/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
         
         <div class="container mx-auto max-w-5xl relative z-10 text-center">
             <div class="inline-block px-6 py-2 border border-gold/30 rounded-full text-gold text-xs font-bold tracking-[0.2em] uppercase mb-8">Exclusive 1:1 VIP Sprint</div>
             <h1 class="h-black text-5xl md:text-8xl mb-8">
                 לזקק את המהות.<br>
-                <span class="text-gradient text-center">לבנות אימפריה.</span>
+                <span class="text-gradient">לבנות אימפריה.</span>
             </h1>
             <p class="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto font-light leading-relaxed text-center">
                 ב-4 שעות ממוקדות של עבודה משותפת (1:1), נהפוך את הקול הייחודי שלכם למערכת עובדת שחוסכת לכם זמן, מייעלת את העסק ושומרת על הלב שלכם במרכז.
@@ -93,34 +92,45 @@
             <div class="flex flex-col md:flex-row justify-center gap-6">
                 <a href="https://digital-sprint.fillout.com/t/baib893n2aus" class="btn-premium px-16 py-6 rounded-[2rem] text-2xl font-black">אבחון התאמה מהיר ⚡</a>
             </div>
-            <p class="mt-10 italic text-sage text-xl font-light">"אני לא מלמדת טכנולוגיה - אני מלמדת איך להרגיש איתה בבית"</p>
+            <p class="mt-10 italic text-sage text-xl font-light text-center">"אני לא מלמדת טכנולוגיה - אני מלמדת איך להרגיש איתה בבית"</p>
         </div>
     </section>
 
     <section class="py-32 px-6 bg-[#050505]">
         <div class="container mx-auto max-w-6xl">
             <h2 class="h-black text-4xl md:text-6xl text-center mb-20">מי שכבר עברו את הזיקוק</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="testimonial-card flex flex-col md:flex-row col-span-1 md:col-span-2 bg-gradient-to-l from-premiumGray to-transparent">
-                    <img src="sheli.jpg" alt="עדות שלי משה" class="w-full md:w-1/3 object-cover opacity-80">
-                    <div class="p-10 flex flex-col justify-center">
-                        <i class="fas fa-quote-right text-gold text-4xl mb-6"></i>
-                        <h3 class="text-3xl font-bold mb-4">"לעשות סדר ולהפוך רעיונות לנכסים בשעה"</h3>
-                        <p class="text-gray-400 text-lg">שלי משה | ליווי עסקי והתפתחות אישית</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <div class="testimonial-screenshot">
+                    <img src="anat.jpg" alt="עדות ענת מורדכי" class="screenshot-img">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2 text-gold">"ה-AI סוף סוף עובד בשבילי"</h3>
+                        <p class="text-gray-400 italic">"מאז הספרינט משהו התיישב. יש לי סדר. אני כבר לא מתחילה כל פעם מאפס."</p>
+                        <p class="text-white font-bold mt-4">ענת מורדכי | ליווי רגשי</p>
                     </div>
                 </div>
-                <div class="testimonial-card p-10 flex flex-col items-center text-center">
-                    <img src="anat.jpg" alt="ענת מורדכי" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-gold/20">
-                    <h3 class="text-2xl font-bold mb-4">"ה-AI סוף סוף עובד בשבילי"</h3>
-                    <p class="text-gray-400">"מאז הספרינט משהו התיישב. יש לי סדר. אני כבר לא מתחילה כל פעם מאפס."</p>
-                    <p class="text-gold font-bold mt-4">ענת מורדכי</p>
+
+                <div class="testimonial-screenshot">
+                    <img src="jenya.jpeg" alt="עדות ג'ניה סלם" class="screenshot-img">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2 text-gold">"ידיעה ברורה איך לפעול"</h3>
+                        <p class="text-gray-400 italic">"יוצאים מהתהליך עם הבנה עמוקה של איך המערכת משרתת אותי באמת."</p>
+                        <p class="text-white font-bold mt-4">ג'ניה סלם | טיפול וייעוץ</p>
+                    </div>
                 </div>
-                <div class="testimonial-card p-10 flex flex-col items-center text-center">
-                    <img src="jenya.jpeg" alt="ג'ניה סלם" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-gold/20">
-                    <h3 class="text-2xl font-bold mb-4">"ידיעה ברורה איך לפעול"</h3>
-                    <p class="text-gray-400">"יוצאים מהתהליך עם הבנה עמוקה של איך המערכת משרתת אותי באמת."</p>
-                    <p class="text-gold font-bold mt-4">ג'ניה סלם</p>
+
+                <div class="testimonial-screenshot md:col-span-2">
+                    <div class="flex flex-col md:flex-row">
+                        <img src="sheli.jpg" alt="עדות שלי משה" class="w-full md:w-1/2 object-cover">
+                        <div class="p-12 flex flex-col justify-center">
+                            <i class="fas fa-quote-right text-gold text-4xl mb-6"></i>
+                            <h3 class="text-3xl font-bold mb-4 text-white">"לעשות סדר ולהפוך רעיונות לנכסים בשעה"</h3>
+                            <p class="text-gray-400 text-lg">שלי משה | ליווי עסקי והתפתחות אישית</p>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -129,21 +139,25 @@
         <div class="container mx-auto max-w-6xl text-center">
             <h2 class="h-black text-4xl md:text-6xl mb-24">מה נבנה יחד ב-4 שעות?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
                 <div class="card-premium p-12 text-right">
                     <i class="fa-solid fa-gem text-gold text-5xl mb-8 block"></i>
-                    <h3 class="text-2xl font-bold mb-6">מערכת מותאמת אישית</h3>
-                    <p class="text-gray-400 leading-relaxed">אנחנו לא בונים "משהו כללי". אנחנו מאפיינים ובונים את המערכת המדויקת שחסרה לכם כרגע - אוטומציה, סוכן AI או תשתית תפעולית.</p>
+                    <h3 class="text-2xl font-bold mb-6">סוכנת תהודה אישית</h3>
+                    <p class="text-gray-400 leading-relaxed">סוכנת AI שאומנה על ה-DNA המקצועי שלכם. היא תכתוב פוסטים ומסרים שנשמעים בדיוק כמוכם.</p>
                 </div>
+
                 <div class="card-premium p-12 text-right">
                     <i class="fa-solid fa-vial text-gold text-5xl mb-8 block"></i>
-                    <h3 class="text-2xl font-bold mb-6">זיקוק ה-DNA שלכם</h3>
-                    <p class="text-gray-400 leading-relaxed">הטכנולוגיה לומדת לדבר בשפה שלכם. כל תוצר שיצא מהמערכת ישמור על האותנטיות והלב המקצועי שלכם ב-100%.</p>
+                    <h3 class="text-2xl font-bold mb-6">מזקקת ניהול</h3>
+                    <p class="text-gray-400 leading-relaxed">סוכנת חכמה לעיבוד סיכומים, בניית תוכניות עבודה וסדר במחשבות תוך שניות.</p>
                 </div>
+
                 <div class="card-premium p-12 text-right">
-                    <i class="fa-solid fa-rocket text-gold text-5xl mb-8 block"></i>
-                    <h3 class="text-2xl font-bold mb-6">מוצר עובד ביד</h3>
-                    <p class="text-gray-400 leading-relaxed">בסיום ה-4 שעות, אתם לא מקבלים "תוכנית עבודה" או "שיעורי בית". אתם יוצאים עם מערכת חיה, פועלת ומוטמעת בעסק.</p>
+                    <i class="fa-solid fa-book-open text-gold text-5xl mb-8 block"></i>
+                    <h3 class="text-2xl font-bold mb-6">ארגז הכלים מלא</h3>
+                    <p class="text-gray-400 leading-relaxed">גישה ל-101 הפרומפטים שלי + דיוק אישי של 5 פרומפטים קריטיים לעסק שלכם.</p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -159,14 +173,12 @@
     <footer style="background-color: #050505; color: #A0A0A0; padding: 80px 20px; text-align: center; border-top: 1px solid rgba(197, 160, 89, 0.2);">
         <div style="max-width: 1000px; margin: 0 auto;">
             <h2 style="font-family: 'Heebo', sans-serif; font-weight: 900; color: #C5A059; font-size: 28px; margin-bottom: 10px; text-align: center;">לב לבינה - פנינה קריוף</h2>
-            <p style="font-size: 16px; margin-bottom: 40px; opacity: 0.8; line-height: 1.6; text-align: center;">מרכז להטמעת בינה מלאכותית בעולם הטיפול, האימון והעסקים הרכים. מחברים בין הלב לטכנולוגיה.</p>
-            <div style="margin-bottom: 40px; font-size: 14px; font-weight: 600; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <a href="index.html" style="color: #A0A0A0; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#C5A059'" onmouseout="this.style.color='#A0A0A0'">בית</a>
-                <a href="services.html" style="color: #A0A0A0; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#C5A059'" onmouseout="this.style.color='#A0A0A0'">שירותים</a>
-                <a href="privacy.html" style="color: #A0A0A0; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#C5A059'" onmouseout="this.style.color='#A0A0A0'">מדיניות פרטיות</a>
-                <a href="terms.html" style="color: #A0A0A0; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#C5A059'" onmouseout="this.style.color='#A0A0A0'">תקנון</a>
-            </div>
-            <p style="font-style: italic; font-size: 14px; color: #666; margin-bottom: 20px; text-align: center;">"אני לא מלמדת טכנולוגיה - אני מלמדת איך להרגיש איתה בבית"</p>
+            <p style="font-size: 16px; margin-bottom: 40px; opacity: 0.8; line-height: 1.6; text-align: center;">
+                מרכז להטמעת בינה מלאכותית בעולם הטיפול, האימון והעסקים הרכים. מחברים בין הלב לטכנולוגיה.
+            </p>
+            <p style="font-style: italic; font-size: 14px; color: #666; margin-bottom: 20px; text-align: center;">
+                "אני לא מלמדת טכנולוגיה - אני מלמדת איך להרגיש איתה בבית"
+            </p>
             <p style="font-size: 12px; opacity: 0.5; text-align: center;">&copy; 2026 כל הזכויות שמורות לפנינה קריוף</p>
         </div>
     </footer>
